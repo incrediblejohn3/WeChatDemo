@@ -1,0 +1,54 @@
+<!--test.wxml-->
+<view class="pages">
+ 
+  <view class="data" hidden="{{datahidden}}">
+    <view class="table">
+      <view class="tr">
+          <view class="th th0"></view>
+          <view class="th th1">姓名</view>
+          <view class="th th2">性别</view>
+          <view class="th th3">年龄</view>
+      </view>
+      <radio-group bindchange="check">
+      <view class="tr" wx:for="{{list}}">
+          <view class="td td0">
+            <radio class="td-radio" value="{{item.id}}" checked="{{checked}}"></radio>
+          </view>
+          <view class="td td1">{{item.name}}</view>
+          <view class="td td2">{{item.sex}}</view>
+          <view class="td td3">{{item.age}}</view>
+      </view>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="add" wx:if="{{addhidden}}">
+    <view class="title">用户信息</view>
+    <view class="info">
+      <view class="name">
+        <label class="label0">姓名:</label>
+        <input class="input0" id="iname" name="name" value="{{name}}" bindinput="inputname"></input>
+      </view>
+      <view class="sex">
+        <label class="label0">性别:</label>
+        <input class="input0" id="isex" name="sex" value="{{sex}}" bindinput="inputsex"></input>
+      </view>
+      <view class="age">
+        <label class="label0">年龄:</label>
+        <input class="input0" id="iage" name="age" value="{{age}}" bindinput="inputage"></input>
+      </view>
+    </view>
+    <view class="btn0">
+      <button class="btn1" bindtap="btnok">确认</button>
+      <button class="btn1" bindtap="btnback">取消</button>
+    </view>
+  </view>
+
+  <view id="btn">
+    <button id="btn-find" bindtap="find">显示数据</button>
+    <button id="btn-add" bindtap="add">新增数据</button>
+    <button id="btn-update" bindtap="update">更新数据</button>
+    <button id="btn-del" bindtap="del">删除数据</button>
+  </view>
+  
+</view>
