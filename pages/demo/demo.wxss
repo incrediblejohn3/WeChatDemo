@@ -1,0 +1,139 @@
+/**demo.wxss**/
+.index {
+  /* position: fixed; */
+  height: 100%;
+  width: 100%;
+  display: block;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+.head {
+  height: 290px;
+  width: 98%;
+  margin: 1%;
+  margin-bottom: 10px;
+  display: block;
+  justify-content: center;
+  background-color: white;
+  /* align-items: center; */
+}
+.img {
+  height: 150px;
+  width: 98%;
+  margin-left: 1%;
+  margin-bottom: 1%;
+}
+.table {
+  width: 96%;
+  margin-left: 2%;
+  font-size: 10px;
+  align-items: center;
+}
+.tr {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.th {
+  background-color: wheat;
+  margin: 10px;
+  text-align: center;
+  width: 90%;
+  height: 50px;
+  color: #330e0e;
+}
+
+.slide-image{
+  display: block;
+  height: 150px;
+  width:100%
+}
+
+/* .table1 {
+  display:flex;
+  flex-wrap: wrap;
+  width:100%;
+}
+.tr1 {
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.thb {
+  width: 90%;
+  height: 200px;
+  border-style: double;
+}
+.tb-img {
+  width: 90%;
+  margin-left: 4%;
+  height: 120px;
+  border-style: ridge;
+  border-color: rgb(0, 132, 255);
+}
+.info {
+  height: 40px;
+  margin-left: 4%;
+}
+.price {
+  height: 40px;
+  margin-left: 4%;
+}
+.tb-txt {
+  font-size: 12px;
+}
+.tb-price {
+  font-size: 20px;
+  color: red;
+} */
+
+.body {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width:100%;
+}
+.hotgoodcontainer{
+  width:45%;
+  flex-flow: row;
+  margin-left: 3%;
+}
+.gooditem{
+  width:100%;
+  height: 230px;
+  margin-bottom: 20px;
+  display:flex;
+  position: relative;
+  flex-direction:column;
+  align-items:center;
+  font-size:12px;
+  box-sizing:border-box;
+  border: 0.5px solid #e2e2e3;
+  background-color: white;
+  top: 0;
+  /* padding-bottom:10px */
+}
+.imgview{
+  width:90%;
+  height:140px;
+}
+.productimg{
+  width:100%;
+  height:100%;
+}
+.title {
+  height: 60px;
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 5px;
+}
+.price {
+  height: 20px;
+  font-size: 18px;
+  color: red;
+  display: flex;
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+}

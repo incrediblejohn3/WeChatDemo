@@ -1,0 +1,44 @@
+<!--demo.wxml-->
+<view class="index">
+  <view class="head">
+    <view class="img">
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for-items="{{banner_list[0].banner}}">
+          <swiper-item>
+            <image src="{{item.pic_url}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="table">
+      <view class="tr">
+          <view class="th th0">居家生活</view>
+          <view class="th th1">服饰箱包</view>
+          <view class="th th2">酒水饮料</view>
+          <view class="th th3">个护清洁</view>
+          <view class="th th4">运动旅行</view>
+      </view>
+      <view class="tr">
+          <view class="th th0">母婴亲子</view>
+          <view class="th th1">数码家电</view>
+          <view class="th th2">美食零食</view>
+          <view class="th th3">宠物用品</view>
+          <view class="th th4">珠宝首饰</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="body">
+    <view class='hotgoodcontainer' wx:for="{{items}}">
+      <view class='gooditem'  bindtap="cliockToGoods" id="{{item.id}}">
+        <view class='imgview'>
+          <image class='productimg' src='{{item.img}}'/>
+        </view>
+        <!-- <view class="text"> -->
+          <view class="title">{{item.title}}</view>
+          <view class="price">{{item.price}}.00</view>
+        <!-- </view> -->
+      </view>
+    </view>
+  </view>
+</view>
