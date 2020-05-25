@@ -7,7 +7,7 @@ page {
 }
 /* 直接设置swiper属性 */
 swiper {
-  height: 500rpx;
+  height: 60%;
 }
 swiper-item image {
   width: 100%;
@@ -39,10 +39,18 @@ swiper-item image {
   height: 50px;
   display: flex;
   align-items: center;
+  display: flex;
+  position: relative;
 }
 .info {
-  border-style: groove;
+  width: 100%;
 }
+
+.infoimg {
+  width: 80%;
+  margin-left: 10%;
+}
+
 .text-remark {
   color: rgb(94, 5, 57);
   font-style: initial;
@@ -132,3 +140,45 @@ text {
   font-size: 25rpx;
   margin: 10rpx;
 }
+
+.stepper {  
+  width: 110px;  
+  height: 30px;  
+  /*给主容器设一个边框*/  
+  border: 1px solid #ccc;  
+  border-radius: 3px;  
+  margin:0 auto;  
+  position: absolute;
+  right: 10px;
+}  
+
+/*加号和减号*/  
+.stepper text {  
+  width: 24px;  
+  line-height: 26px;  
+  text-align: center;  
+  float: left;  
+}  
+
+/*数值*/  
+.stepper input {  
+  width: 40px;  
+  height: 26px;  
+  float: left;  
+  margin: 0 auto;  
+  text-align: center;  
+  font-size: 12px;  
+  /*给中间的input设置左右边框即可*/  
+  border-left: 1px solid #ccc;  
+  border-right: 1px solid #ccc;  
+}  
+
+/*普通样式*/  
+.stepper .normal{  
+  color: black;  
+}  
+
+/*禁用样式*/  
+.stepper .disabled{  
+  color: #ccc;  
+}  

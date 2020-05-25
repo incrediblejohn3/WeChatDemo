@@ -18,18 +18,14 @@ Page({
     price: '',
     img: '',
     isLike: true,
-    imgurl: "https://img11.360buyimg.com/cms/jfs/t1/43665/32/14756/2824061/5d77f8b8E3e335a82/af0a3a0ac16b6bb2.png",
-    imageWidth:0,
-    imageHeight:0 ,
+    imgurl: '',
+     // input默认是1  
+     num: 1,  
+     // 使用data数据对象设置样式名  
+     minusStatus: 'disabled',
 
     // banner
-    imgUrls: [
-      "http://static.home.mi.com/app/shop/img?id=shop_904608692a4d8415d0de39a0a5897e80.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
-      "http://static.home.mi.com/app/shop/img?id=shop_0f5e43035a8b8d27a4b6f315d222fd9b.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
-      "http://static.home.mi.com/app/shop/img?id=shop_4ba3d814639ab27570f174467133619f.png&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
-      "http://static.home.mi.com/app/shop/img?id=shop_91f29509f14ea243958285aaf5d5b640.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
-      "http://static.home.mi.com/app/shop/img?id=shop_5c752db8097555831469356f5f389078.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78"
-    ],
+    imgUrls: [],
     indicatorDots: true, //是否显示面板指示点
     autoplay: true, //是否自动切换
     interval: 3000, //自动切换时间间隔,3s
@@ -38,6 +34,45 @@ Page({
     // 商品详情介绍
     detailImg: ["img"],
   },
+
+  /* 点击减号 */  
+  bindMinus: function() {  
+    var num = this.data.num;  
+    // 如果大于1时，才可以减  
+    if (num > 1) {  
+        num --;  
+    }  
+    // 只有大于一件的时候，才能normal状态，否则disable状态  
+    var minusStatus = num <= 1 ? 'disabled' : 'normal';  
+    // 将数值与状态写回  
+    this.setData({  
+        num: num,  
+        minusStatus: minusStatus  
+    });  
+},  
+  /* 点击加号 */  
+  bindPlus: function() {  
+    var num = this.data.num;  
+    // 不作过多考虑自增1  
+    num ++;  
+    // 只有大于一件的时候，才能normal状态，否则disable状态  
+    var minusStatus = num < 1 ? 'disabled' : 'normal';  
+    // 将数值与状态写回  
+    this.setData({  
+        num: num,  
+        minusStatus: minusStatus  
+    });  
+  },  
+  /* 输入框事件 */  
+  bindManual: function(e) {  
+      var num = e.detail.value;  
+      // 将数值与状态写回  
+      this.setData({  
+          num: num  
+      });  
+  },
+
+  
   //预览图片
   previewImage: function (e) {
     var current = e.target.dataset.src;
@@ -69,7 +104,8 @@ Page({
   },
 
   onLoad: function (params) {
-    this.setData({
+    var that = this;
+    that.setData({
       id: params.id
     })
     console.log(params.id)
@@ -84,20 +120,19 @@ Page({
         'content-type': 'application/json'
       },
       success: (result) => {
-        console.log(result)
-        this.setData({
+        console.log(result.data)
+        that.setData({
           name: result.data.name,
           title: result.data.title,
           price: result.data.price,
-          img: result.data.img
+          img: result.data.img,
+          imgurl: result.data.info,
+          imgUrls: result.data.swiper.split(",")
         })
+        console.log(imgUrls)
+       
       }
     })
-    imgload: function(e){
-      console.log("图片加载完成="+e.detail);
-      //用来计算高宽
-      this.setData(wxAutoImageCal(e));
-   }
   
   }
 

@@ -17,18 +17,26 @@
   <view class="separate num">
     <!-- sku选择 -->
     <text bindtap="toggleDialog" class="numtext">请选择购买数量</text>
+    <view class="stepper">  
+      <!-- 减号 -->  
+      <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+      <!-- 数值 -->  
+      <input type="number" bindchange="bindManual" value="{{num}}" />  
+      <!-- 加号 -->  
+      <text class="normal" bindtap="bindPlus">+</text>  
+    </view>  
   </view>
   <view class="separate evaluation">
     <text>商品评价</text>
     <text class="text-remark">东西还可以，好评~</text>
   </view>
   <view class="separate info">
-    <text>商品详情</text>
-    <!-- <block wx:for-items="{{detailImg}}" wx:key="name">
-      <image class="image_detail" src="{{item}}" />
-    </block> -->
-    <!-- <view class="goodsinfo">{{title}}{{title}}{{title}}{{title}}{{title}}{{title}}</view> -->
-    <image style="width: {{imageWidth}}px; height: {{imageHeight}}px;" src="{{imgurl}}"  mode="aspectFill" bindload="imgload"></image>
+    <text style="">商品详情</text>
+    
+    <view class="infoimg">
+      <image src="{{imgurl}}"  mode="widthFix"></image>
+    </view>
+    
   </view>
   <view class="temp"></view>
 </scroll-view>
