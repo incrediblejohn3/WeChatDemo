@@ -13,19 +13,19 @@ Page({
       {
         "banner": [
           {
-            "pic_url": "http://static.home.mi.com/app/shop/img?id=shop_904608692a4d8415d0de39a0a5897e80.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
+            "pic_url": "https://img30.360buyimg.com/da/jfs/t1/111100/32/7988/166624/5ec77d50Edae3aecf/90b1d37b2f591529.jpg!q90.webp",
           },
           {
-            "pic_url": "http://static.home.mi.com/app/shop/img?id=shop_0f5e43035a8b8d27a4b6f315d222fd9b.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
+            "pic_url": "https://img14.360buyimg.com/da/jfs/t1/127887/2/2744/87534/5ec7fe37E9e1704db/b347d6f4e90a3739.jpg!q90.webp",
           },
           {
-            "pic_url": "http://static.home.mi.com/app/shop/img?id=shop_4ba3d814639ab27570f174467133619f.png&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
+            "pic_url": "https://img12.360buyimg.com/da/jfs/t1/112092/31/6971/138221/5ebe6142E1317dccd/ef9f8837090b31d6.jpg!q90.webp",
           },
           {
-            "pic_url": "http://static.home.mi.com/app/shop/img?id=shop_91f29509f14ea243958285aaf5d5b640.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
+            "pic_url": "https://img14.360buyimg.com/da/jfs/t1/54728/2/14637/57293/5db7a434Eeaf7e134/f3326afd7eb731ab.jpg!q90.webp",
           },
           {
-            "pic_url": "http://static.home.mi.com/app/shop/img?id=shop_5c752db8097555831469356f5f389078.jpeg&w=1080&h=600&crop=a_0_120_1080_480&t=webp&z=1.15&q=78",
+            "pic_url": "https://img14.360buyimg.com/da/jfs/t1/127909/29/2523/93050/5ec62577E1f85780a/4bbeb4e04fa9053e.jpg!q90.webp",
           }
         ]
       }

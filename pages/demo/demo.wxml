@@ -3,9 +3,9 @@
   <view class="head">
     <view class="img">
       <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for-items="{{banner_list[0].banner}}">
+        <block class="img" wx:for="{{banner_list[0].banner}}">
           <swiper-item>
-            <image src="{{item.pic_url}}" class="slide-image" />
+            <image src="{{item.pic_url}}" class="slide-image" mode="widthFix"/>
           </swiper-item>
         </block>
       </swiper>

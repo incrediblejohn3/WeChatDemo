@@ -8,23 +8,27 @@
   background-color: whitesmoke;
 }
 .head {
-  height: 290px;
+  height: 360px;
   width: 98%;
   margin: 1%;
   margin-bottom: 10px;
-  display: block;
-  justify-content: center;
   background-color: white;
-  /* align-items: center; */
+}
+swiper {
+  height: 200px;
+}
+.slide-image {
+  width: 100%;
 }
 .img {
-  height: 150px;
+  height: 200px;
   width: 98%;
   margin-left: 1%;
-  margin-bottom: 1%;
 }
 .table {
+  height: 150px;
   width: 96%;
+  margin-top: 10px;
   margin-left: 2%;
   font-size: 10px;
   align-items: center;
@@ -36,10 +40,10 @@
 }
 .th {
   background-color: wheat;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
   width: 90%;
-  height: 50px;
+  height: 60px;
   color: #330e0e;
 }
 
@@ -101,7 +105,7 @@
 }
 .gooditem{
   width:100%;
-  height: 230px;
+  height: 250px;
   margin-bottom: 20px;
   display:flex;
   position: relative;
@@ -116,7 +120,7 @@
 }
 .imgview{
   width:90%;
-  height:140px;
+  height:160px;
 }
 .productimg{
   width:100%;

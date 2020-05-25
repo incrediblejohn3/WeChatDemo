@@ -1,0 +1,56 @@
+<!-- cart.wxml -->
+<block wx:if='{{hasList}}'>
+  <view class="divLine"></view>
+  <view class="carts-list">
+    <view wx:for="{{carts}}" class="carts-item" wx:key='cart' wx:item='item'>
+      <!-- //复选框 -->
+      <view class="carts-radio">
+        <image class="carts-select" bindtap="bindCheckbox" data-index="{{index}}" src="{{item.isSelect?'/pages/demo/image/select.png':'/pages/demo/image/n_select.png'}}" />
+      </view>  
+      <!-- //商品信息 -->  
+      <view class="carts-cnt">
+        <image class="carts-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="carts-info">
+          <view class="carts-title clamp2">{{item.name}}</view>
+          <!-- <text class="carts-guige">{{item.guige}}ml</text> -->
+          <view class="carts-subtitle">
+            <text class="carts-price c--f60">￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- //数量加减 -->  
+      <view class="carts-num">
+          <text class="minus"  bindtap="bindMinus" data-index='{{index}}'>-</text>
+          <input type="number"  bindinput="bindIptCartNum" data-index='{{index}}' value="{{item.num}}" />
+          <text class="plus normal" data-index='{{index}}' bindtap="bindPlus">+</text>
+      </view>
+      
+      <!-- //删除 -->  
+      <icon class="carts-del" type="clear" size="16" color="#ccc" data-index="{{index}}" bindtap="bindCartsDel" />
+    </view>
+  </view>
+  <view class="divLine"></view>
+
+  <view class="carts-footer">  
+    <view class="bottomfixed">  
+      <view class="inner">  
+        <view class="chkAll" bindtap="bindSelectAll">
+          <image class="allselect" src="{{selectAllStatus?'/pages/demo/image/select.png':'/pages/demo/image/n_select.png'}}" /> 
+          <text>全选</text>  
+        </view>  
+        <view class="total">合计：<em>￥{{totalMoney}}</em></view>  
+        <view wx:if="{{totalCount != 0}}" class="btn-pay" bindtap='bindjiesuan'>去结算({{totalCount}})</view>  
+        <view wx:else class="btn-pay disabled">去结算({{totalCount}})</view>  
+      </view>  
+    </view>  
+  </view>
+</block>
+
+<block wx:else>
+  <view class="content" >
+    <view style="margin-top:50px;width:100%;">
+      <view style='font-size:15px;'>购物车没有商品!</view>
+      <!-- <view wx:for="{{carts}}">{{item.name}}{{item.price}}</view> -->
+    </view>
+  </view>
+</block>

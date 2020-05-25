@@ -7,7 +7,7 @@ page {
 }
 /* 直接设置swiper属性 */
 swiper {
-  height: 60%;
+  height: 400px;
 }
 swiper-item image {
   width: 100%;

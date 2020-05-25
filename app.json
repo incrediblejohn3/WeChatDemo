@@ -1,8 +1,9 @@
 {
   "pages":[
-
+    
     "pages/demo/demo",
     "pages/goods/goods",
+    "pages/cart/cart",
     "pages/test/test",
     "pages/index/index",
     "pages/logs/logs"
@@ -34,7 +35,7 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/cart/cart",
         "iconPath": "pages/demo/image/cart.png",
         "selectedIconPath": "pages/demo/image/cart.png",
         "text": "购物车"

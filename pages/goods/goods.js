@@ -32,7 +32,7 @@ Page({
     duration: 1000, //  滑动动画时长1s
 
     // 商品详情介绍
-    detailImg: ["img"],
+    detailImg: ["img"]
   },
 
   /* 点击减号 */  
@@ -82,17 +82,24 @@ Page({
       urls: this.data.imgUrls // 需要预览的图片http链接列表  
     })
   },
-  // 收藏
-  addLike() {
-    this.setData({
-      isLike: !this.data.isLike
-    });
-  },
+  // // 收藏
+  // addLike() {
+  //   this.setData({
+  //     isLike: !this.data.isLike
+  //   });
+  // },
   // 跳到购物车
-  toCar() {
-    wx.switchTab({
-      url: '/pages/cart/cart'
+  toCar: function(e) {
+    var that = this;
+    var goodsId = that.data.id
+    var goodsNum = that.data.num
+    console.log('goodsId='+goodsId+',goodsNum='+goodsNum)
+    wx.reLaunch({
+      url: '../cart/cart?id='+goodsId+'&num='+goodsNum
     })
+    // wx.switchTab({
+    //   url: '/pages/cart/cart'
+    // })
   },
   // 立即购买
   immeBuy() {
@@ -101,6 +108,10 @@ Page({
       icon: 'success',
       duration: 2000
     });
+  },
+
+  addCar: function () {
+    
   },
 
   onLoad: function (params) {
@@ -129,9 +140,7 @@ Page({
           imgurl: result.data.info,
           imgUrls: result.data.swiper.split(",")
         })
-        console.log(imgUrls)
-       
-      }
+      },
     })
   
   }
