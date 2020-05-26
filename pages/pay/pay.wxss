@@ -1,0 +1,188 @@
+/* pay.wxss */
+page {
+  background-color: whitesmoke;
+}
+.divLine{
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+ }
+
+
+.footer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 110rpx;
+  line-height: 120rpx;
+  background: white;
+}
+.total {
+  color: red;
+  font-size: 20px;
+}
+.money {
+  font-size: 26px;
+}
+.btn-pay{
+  position: absolute;
+  right:0px;
+  width: 100px;
+  background:red;
+  color:#fff;
+  padding:0 10px;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.address {
+  background-color: white;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+.adrview {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.adr {
+  margin-bottom: 5px;
+  /* border-style: groove; */
+}
+.a0,.a2 {
+  display: flex;
+  font-size: 14px;
+}
+.a1 {
+  font-weight: 600;
+  font-size: 18px;
+}
+.adrtip {
+  display: flex;
+  height: 14px;
+  width: 26px;
+  background:red;
+  color:#fff;
+  /* padding-left: 1px; */
+  margin-right: 4px;
+  font-size: 12px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.adrmore image {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 0;
+}
+.adrmore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goods {
+    margin-top: 2%;
+    padding: 0 20rpx;
+    background-color: white;
+}
+.goods .carts-item{
+  border-top: 1rpx solid #e3e3e3;
+  box-sizing: border-box; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 30rpx 20rpx; 
+  width: 100%; 
+  position: relative;
+}
+.goods .carts-item:nth-child(1){
+  border-top: 0;
+}
+.carts-item .carts-cnt{
+  flex: 1; 
+  padding: 0 20rpx;
+}
+.carts-cnt .carts-image{
+  float:left; 
+  margin-right: 20rpx; 
+  height: 150rpx; 
+  width: 150rpx;
+ 
+}
+.carts-cnt .carts-info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150rpx;
+}
+.carts-cnt .carts-title{
+  font-size:15px;
+}
+.carts-cnt .carts-subtitle{
+  display: flex; 
+  flex-direction: row; 
+  font-size: 15px;
+  color: red;
+}
+.goods .carts-item .carts-del{
+  position: absolute; 
+  top: 20rpx; 
+  right: 10rpx;
+}
+.carts-num {
+  color: #000; 
+  text-align: center; 
+  line-height: 50rpx; 
+  width: 40rpx;
+}
+
+.detail {
+  margin-top: 15px;
+  padding-bottom: 20px;
+  padding-top: 3px;
+  background-color: white;
+}
+.det {
+  display: flex;
+  margin-left: 6px;
+  margin-top: 8px;
+}
+.grey {
+  color: grey;
+  display: flex;
+  position: absolute;
+  right: 30px;
+}
+.trimage {
+  margin-top: 15px;
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}
+.trimage image {
+  height: 10px;
+  width: 10px;
+}
+.re1 {
+  min-width: 60%;
+  margin-left: 20px;
+}
+.count {
+  color: grey;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 10px;
+}
+.cou0 {
+  font-size: 14px;
+  margin-top: 14px;
+}
+.cou1 {
+  font-size: 18px;
+  color: red;
+}

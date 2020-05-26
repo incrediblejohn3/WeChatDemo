@@ -1,0 +1,56 @@
+<!-- pay.wxml -->
+<scroll-view scroll-y="true">
+
+  <view class="address">
+    <view class="adrview">
+      <view class="adr a0"><view class="adrtip">默认</view>{{adr0}}</view>
+      <view class="adr a1">{{adr1}}</view>
+      <view class="adr a2">{{adrname}}　{{adrtel}}</view>
+    </view>
+    <view class="adrmore"><image src="/pages/demo/image/more.png"></image></view>       
+  </view>
+  <view class="divLine"></view>
+
+  <view class="goods">
+    <view wx:for="{{carts}}" class="carts-item" wx:key='cart' wx:item='item'>
+      <view class="carts-cnt">
+        <image class="carts-image" src="{{item.image}}" mode="aspectFill" />
+        <view class="carts-info">
+          <view class="carts-title clamp2">{{item.title}}</view>
+          <view class="carts-subtitle">
+            <text class="carts-price c--f60">￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="carts-num">
+        <view class="num">x{{item.num}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="detail">
+    <view class="det transport">
+      <view class="det transport tr0">配送方式</view><view class="det transport grey">快递　免邮</view><view class="trimage"><image src="/pages/demo/image/more.png"></image></view>
+    </view>
+    <view class="det discount">
+      <view class="det discount dis0">优惠券</view><view class="det discount grey">无可用</view><view class="trimage"><image src="/pages/demo/image/more.png"></image></view>
+    </view>
+    <view class="det invoice">
+      <view class="det invoice inv0">开具发票</view><view class="det invoice grey">电子(商品明细-个人)</view><view class="trimage"><image src="/pages/demo/image/more.png"></image></view>
+    </view>
+    <view class="det remarks">
+      <view class="det remarks re0">订单备注</view><input type="text" class="det remarks re1" placeholder="(选填)"></input>
+    </view>
+    <view class="det count">
+      <view class="det count cou1">小计:￥{{totalMoney}}</view>
+      <view class="det count cou0">共{{totalCount}}件</view>
+    </view>
+    
+  </view>
+
+</scroll-view>
+
+<view class="footer">
+  <view class="total">￥<text class="total money">{{totalMoney}}</text></view>
+  <view class="btn-pay" bindtap="pay">支付订单</view> 
+</view>

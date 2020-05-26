@@ -4,6 +4,7 @@
     "pages/demo/demo",
     "pages/goods/goods",
     "pages/cart/cart",
+    "pages/pay/pay",
     "pages/test/test",
     "pages/index/index",
     "pages/logs/logs"

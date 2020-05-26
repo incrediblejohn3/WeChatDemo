@@ -1,7 +1,4 @@
 <!--goods.wxml-->
-
-
-
 <scroll-view scroll-y="true">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}">

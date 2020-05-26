@@ -39,7 +39,8 @@ swiper {
   justify-content: space-between;
 }
 .th {
-  background-color: wheat;
+  /* background-color: wheat; */
+  border-style: groove;
   margin: 5px;
   text-align: center;
   width: 90%;
@@ -52,44 +53,6 @@ swiper {
   height: 150px;
   width:100%
 }
-
-/* .table1 {
-  display:flex;
-  flex-wrap: wrap;
-  width:100%;
-}
-.tr1 {
-  width:100%;
-  display: flex;
-  justify-content: space-between;
-}
-.thb {
-  width: 90%;
-  height: 200px;
-  border-style: double;
-}
-.tb-img {
-  width: 90%;
-  margin-left: 4%;
-  height: 120px;
-  border-style: ridge;
-  border-color: rgb(0, 132, 255);
-}
-.info {
-  height: 40px;
-  margin-left: 4%;
-}
-.price {
-  height: 40px;
-  margin-left: 4%;
-}
-.tb-txt {
-  font-size: 12px;
-}
-.tb-price {
-  font-size: 20px;
-  color: red;
-} */
 
 .body {
   display: flex;

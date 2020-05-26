@@ -2,7 +2,7 @@
 Page ({
   data: {
     hasList: true,
-    // id: '',
+    // gid: '',
     // num: '',
     totalCount: 0,
     totalMoney: 0,
@@ -65,13 +65,29 @@ Page ({
   //删除商品
   bindCartsDel(e) {
     var that = this;
+    const index = e.currentTarget.dataset.index;
+    let carts = that.data.carts;
+    let id = carts[index].id;
     wx.showModal({
       title: '提示',
       content: '您确定要删除吗？',
       success: function (res) {
         
         if (res.confirm) {
-          //网络请求删除购物车数据
+          wx.request({
+            url: 'http://192.168.1.118/deleteCart',
+            method: "GET",
+            data: {
+              id: id
+            },
+            header: {
+              'content-type': 'application/json'
+            },
+            success: (result) => {
+              console.log(result)
+              that.getCart()
+            }
+          })
         }
       }
     })
@@ -141,17 +157,17 @@ Page ({
     if (jscart.length <= 0) {
       wx.showToast({
         title: '未选择商品',
-        icon: 'success',
         duration: 1000
       })
       return;
     }
+    var model = JSON.stringify(jscart);
     // wx.setStorageSync('jscart', jscart);//存入缓存
-    // //转到结算页面
-    // wx.navigateTo({
-    //   url: 'jiesuan?amount=' + that.data.totalMoney
-    // });
- 
+    //转到结算页面
+    wx.reLaunch({
+      url: '../pay/pay?carts=' + model
+    });
+    console.log('jscart:'+model)
   },
 
   //加载购物车

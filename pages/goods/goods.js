@@ -18,6 +18,7 @@ Page({
     price: '',
     img: '',
     isLike: true,
+    // 商品详情介绍
     imgurl: '',
      // input默认是1  
      num: 1,  
@@ -31,8 +32,8 @@ Page({
     interval: 3000, //自动切换时间间隔,3s
     duration: 1000, //  滑动动画时长1s
 
-    // 商品详情介绍
-    detailImg: ["img"]
+    cart: []
+    // detailImg: ["img"]
   },
 
   /* 点击减号 */  
@@ -103,15 +104,46 @@ Page({
   },
   // 立即购买
   immeBuy() {
-    wx.showToast({
-      title: '购买成功',
-      icon: 'success',
-      duration: 2000
+    var that = this;
+    const cart = that.data.cart
+    that.setData({
+      ['cart[0].id']: that.data.id,
+      ['cart[0].name']: that.data.name,
+      ['cart[0].title']: that.data.title,
+      ['cart[0].price']: that.data.price,
+      ['cart[0].num']: that.data.num,
+      ['cart[0].image']: that.data.img,
+      ['cart[0].uid']: 1
+    })
+    var model = JSON.stringify(cart);
+    console.log('goods:'+model)
+    wx.reLaunch({
+      url: '../pay/pay?carts=' + model
     });
   },
 
   addCar: function () {
-    
+    var that = this;
+    console.log('id:'+that.data.id);
+    wx.request({
+      url: 'http://192.168.1.118/insertCart',
+      method: "GET",
+      data: {
+        id: that.data.id,
+        num: that.data.num
+      },
+      header: {
+        'content-type': 'application/json'
+      },
+      success: (result) => {
+        wx.showToast({
+          title: '添加成功',
+          icon: 'success',
+          duration: 2000
+        })
+        console.log(result)
+      }
+    })
   },
 
   onLoad: function (params) {
